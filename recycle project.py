@@ -8,6 +8,9 @@ background = pygame.image.load("C:/Users/nicol/OneDrive/python/images/background
 backgroundimage = pygame.transform.scale(background,(800,800))
 gameover = pygame.image.load("C:/Users/nicol/OneDrive/python/images/gameover.png")
 gameoverimage = pygame.transform.scale(gameover,(800,800))
+win = pygame.image.load("C:/Users/nicol/OneDrive/python/images/win.png")
+winimage = pygame.transform.scale(win,(800,800))
+
 
 class non(pygame.sprite.Sprite):
     def __init__(self):
@@ -91,6 +94,11 @@ while True:
     if Lives == 0:
         screen.fill("black")
         screen.blit(gameoverimage,(0,0))
+        pygame.display.update()
+        time.sleep(2.5)
+        pygame.quit()
+    if score == 30:
+        screen.blit(winimage,(0,0))
         pygame.display.update()
         time.sleep(2.5)
         pygame.quit()
